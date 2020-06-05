@@ -8,7 +8,7 @@ If you have any question, comment, whatever, please let me know.
 
 ## Pre-Challenge Security Setup
 * Create a PGP key.
-* Using PGP, send an encrypted email to nikhil@womenfirstdigital.org with your public PGP key attached.
+* Using PGP, send an encrypted email, confirming the availability for Telephonic Technical Interview during the week, to nikhil@womenfirstdigital.org with your public PGP key attached.
 * You will find the public key for nikhil@womenfirstdigital.org attached in the email I sent you for this challenge.
 
 ## Challenge 1 - Code Review
