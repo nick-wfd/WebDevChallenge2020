@@ -31,8 +31,8 @@ Only the counts of users who have signed in with Twitter need to be securely sto
 ***
 
 ## Challenge 3 - Wordpress Theme Development
-* The "WP-Theme" Folder has a PSD file. 
-* You need to create a responsive wordpress theme based on the PSD (ignore the layer that says "Thanks for downloading...").
+* The "WP-Theme" Folder has 2 PSD files. (select any one to create a wordpress theme based on the psd) 
+* You need to create a responsive wordpress theme based on the PSD.
 * You must use SASS or LESS, choose!
 * Bootstrap is mandatory
 * You can use pure JS or Jquery or any other you prefer
