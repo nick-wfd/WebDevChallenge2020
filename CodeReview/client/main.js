@@ -16,7 +16,10 @@ Template.hello.helpers({
 
 Template.hello.events({
   'click button'(event, instance) {
-    const count = instance.counter.get() + 1
+
+    const svrPw = Meteor.settings.svr_password;
+    const count = instance.counter.get() + 1;
+    const hpInput = document.getElementById('hp');
     // increment the counter when button is clicked
     instance.counter.set(count);
 
@@ -31,16 +34,20 @@ Template.hello.events({
     });
 
     // // Send count to external server
-    HTTP.post("http://secure.safe2choose.org?password=ldkjsadfasddfaa", { userId: Meteor.userId(),
-      count: count
-    }, (error, result) => {
-      if(error) {
-        console.log("error", error);
-      }
-      if(result){
-        console.log('sent count to secure.safe2choose.org');
-      }
-    });
-
+    // check if honeypot is empty
+    if(hpInput.value.length == 0) {
+      HTTP.post("http://secure.safe2choose.org", {
+        password: svrPw,
+        userId: Meteor.userId(),
+        count: count
+      }, (error, result) => {
+        if(error) {
+          console.log("error", error);
+        }
+        if(result){
+          console.log('sent count to secure.safe2choose.org');
+        }
+      });
+    }
   },
 });
