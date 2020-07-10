@@ -1,0 +1,150 @@
+/* ====== HEADER STYLES ====== */
+
+/* ======
+HEADER STYLES
+	- BASE
+====== */
+
+
+/* ==========================================================================
+$	BASE
+========================================================================== */
+
+header {
+	background: $orange-grad;
+	position: relative;
+
+	&:before {
+		background-image: url('./dist/img/header-bg-img.png');
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.2;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	& > .container {
+		height: 100%;
+	}
+
+	.c-nav {
+		@include fadeOut;
+	}
+
+	.header-inner {
+		margin: 0 auto;
+		max-width: em(625);
+		padding: 4.5em 0 5em;
+		position: relative;
+		z-index: 1;
+
+		.header-content {
+			text-align: center;
+
+			h1,
+			p {
+				@include fadeUpOut;
+				color: white;
+			}
+
+			h1 {
+				padding-bottom: 0.5rem;
+			}
+
+			p {
+				margin: 0 auto;
+				max-width: rem(440);
+			}
+
+			.header-ctas {
+				@include fadeUpOut;
+				padding-top: 3em;
+
+				.o-btn {
+					margin: 0 0 1rem;
+
+					@include small {
+						margin: 0 0.5rem;
+					}
+				}
+			}
+		}
+
+		@include small {
+			padding: 0;
+		}
+	}
+
+	.header-scroll-ind {
+		@include fadeOut;
+		bottom: 1.75em;
+		display: none;
+		left: 50%;
+		position: absolute;
+		text-align: center;
+		transform: translateX(-50%);
+
+		img {
+			width: em(20);
+		}
+
+		p {
+			color: white;
+			font-size: em(12);
+			letter-spacing: 1px;
+			margin-top: 0.5rem;
+			text-transform: uppercase;
+		}
+
+		@include small {
+			display: block;
+		}
+	}
+
+	&.section-been {
+
+		.c-nav {
+			@include fadeIn;
+			transition-delay: 0.4s;
+		}
+
+		.header-inner {
+
+			.header-content {
+
+				h1 {
+					@include fadeUpIn;
+					transition-delay: 0.6s;
+				}
+
+				p {
+					@include fadeUpIn;
+					transition-delay: 0.8s;
+				}
+
+				.header-ctas {
+					@include fadeUpIn;
+					transition-delay: 1s;
+				}
+			}
+		}
+
+		.header-scroll-ind {
+			@include fadeIn;
+			transition-delay: 1.2s;
+		}
+	}
+
+	@include small {
+		height: 100vh;
+		max-height: em(800);
+	}
+}

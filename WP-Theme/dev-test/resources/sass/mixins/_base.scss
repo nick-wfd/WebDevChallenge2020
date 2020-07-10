@@ -1,0 +1,26 @@
+/* ====== BASE MIXINS ====== */
+
+/* ======
+BASE MIXINS
+	- LAYOUT
+====== */
+
+
+/* ==========================================================================
+$	LAYOUT
+========================================================================== */
+
+@mixin cover {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@mixin flex {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	-ms-flex-direction:row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}

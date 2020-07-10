@@ -1,0 +1,102 @@
+/* ====== NAV COMPONENT STYLES ====== */
+
+/* ======
+NAV COMPONENT STYLES
+	- BASE
+====== */
+
+
+/* ==========================================================================
+$	BASE
+========================================================================== */
+
+.c-nav {
+	padding-top: 1.75em;
+
+	.logo {
+		color: white;
+		font-size: em(25);
+		font-weight: $font-weight-light;
+		letter-spacing: 1px;
+
+		span {
+			font-weight: $font-weight-bold;
+		}
+	}
+
+	.menu {
+		@include flex;
+		align-items: center;
+		display: none;
+		list-style: none;
+		margin: 0;
+
+		li {
+			display: inline-block;
+			overflow: hidden;
+
+			&:not(:last-child) {
+				margin-right: 1.75rem;
+			}
+
+			a {
+				color: white;
+				font-size: em(16);
+				font-weight: $font-weight-light;
+				position: relative;
+
+				&:before {
+					background-color: white;
+					bottom: 0;
+					content: "";
+					display: block;
+					height: 1px;
+					left: 0;
+					position: absolute;
+					transition: transform 0.6s ease;
+					transform: translateX(-102%);
+					width: 100%;
+				}
+
+				&:hover {
+
+					&:before {
+						transform: translateX(0);
+					}
+				}
+
+				&.o-btn {
+					color: $red;
+
+					&:before {
+						display: none;
+					}
+
+					&:hover {
+						color: white;
+					}
+				}
+			}
+
+			&.btn {
+
+				a {
+					@extend .o-btn;
+					@extend .o-btn--light;
+				}
+			}
+		}
+
+		@include medium {
+			display: flex;
+		}
+	}
+
+	.mob-menu {
+		width: auto;
+
+		@include medium {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,47 @@
+/*!
+Theme Name: WFD Dev Test
+Theme URI: 
+Author: Joe Mumford
+Author URI: https://www.linkedin.com/in/joemumford
+Version: 1.0
+Tags: 
+*/
+
+// RESET
+@import 'reset';
+@import 'normalize';
+
+// BASE
+@import 'vars';
+@import 'mixins/base';
+@import 'mixins/breakpoints';
+@import 'mixins/transitions';
+
+// FUNCTIONS
+@import 'functions/fonts';
+
+// VENDOR
+@import 'vendor/bootstrap';
+@import 'vendor/mapbox';
+
+// THEME SETTINGS
+@import 'theme/settings/fonts';
+@import 'theme/settings/global';
+
+// THEME OBJECTS
+@import 'theme/objects/o-btn';
+
+// THEME COMPONENTS
+@import 'theme/components/c-icon-columns';
+@import 'theme/components/c-product';
+@import 'theme/components/c-map';
+@import 'theme/components/c-nav';
+@import 'theme/components/c-signup';
+@import 'theme/components/c-text-image';
+
+// THEME PAGES
+//@import 'theme/pages/candidate-charter';
+
+// THEME PARTIALS
+@import 'theme/partials/footer';
+@import 'theme/partials/header';

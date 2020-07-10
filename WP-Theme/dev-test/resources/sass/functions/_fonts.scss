@@ -1,0 +1,16 @@
+/* ====== TYPOGRAPHY FUNCTIONS ====== */
+
+/*
+** Pixels to em
+** Useage: font-size: em(16);
+** Output: font-size: 1em;
+*/
+@function em($pixels, $context: $browser-context) {
+	
+	@return #{$pixels/$context}em;
+}
+
+@function rem($pixels, $context: $browser-context) {
+	
+	@return #{$pixels/$context}rem;
+}
