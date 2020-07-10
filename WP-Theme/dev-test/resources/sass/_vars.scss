@@ -1,0 +1,50 @@
+/* ====== VARIABLES ====== */
+
+/* ======
+VARIABLES
+	- COLOURS
+	- FONTS
+	- BREAKPOINTS
+====== */
+
+
+/* ==========================================================================
+$	COLOURS
+========================================================================== */
+
+$red: #cb0034;
+$orange: #e06900;
+$blue-dark: #264699;
+$blue-light: #4964a9;
+$orange-grad: linear-gradient(45deg, $red 0%, $orange 100%);
+$blue-grad: linear-gradient(45deg, $blue-dark 0%, $blue-light 100%);
+
+$grey-light: #f6f6f6;
+
+/* ==========================================================================
+$	FONTS
+========================================================================== */
+
+$browser-context: 16 !default;
+
+$font-family-base: myriad-pro, sans-serif;
+
+$font-size-base: 1em;
+
+$font-weight-light: 300!default;
+$font-weight-normal: 400!default;
+$font-weight-bold: 600!default;
+
+/* ==========================================================================
+$	BREAKPOINTS
+========================================================================== */
+
+$screen-xxs-min: 366px;
+$screen-xs-min: 576px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1199px;
+$screen-xl-min: 1440px;
+$screen-xxl-min: 1690px;
+$screen-xxxl-min: 1920px;
+$screen-container: 80.1em;

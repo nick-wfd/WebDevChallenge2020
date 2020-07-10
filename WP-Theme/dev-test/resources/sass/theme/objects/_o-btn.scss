@@ -1,0 +1,44 @@
+/* ====== BUTTON OBJECT STYLES ====== */
+
+/* ======
+BUTTON OBJECT STYLES
+	- BASE
+====== */
+
+
+/* ==========================================================================
+$	BASE
+========================================================================== */
+
+.o-btn {
+	background-color: $blue-dark;
+	border-radius: 1.6rem;
+	border: none;
+	color: white;
+	display: inline-block;
+	font-size: em(14);
+	font-weight: $font-weight-normal;
+	padding: 0.8rem 2.4rem;
+	text-align: center;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	width: 100%;
+
+	&:hover {
+		background-color: $blue-light;
+		color: white;
+	}
+
+	&--light {
+		background-color: white;
+		color: $red;
+
+		&:hover {
+			background-color: $blue-dark;
+			color: white;
+		}
+	}
+
+	@include small {
+		width: auto;
+	}
+}

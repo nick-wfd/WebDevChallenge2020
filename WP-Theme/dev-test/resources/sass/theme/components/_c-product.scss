@@ -1,0 +1,97 @@
+/* ====== PRODUCT COMPONENT STYLES ====== */
+
+/* ======
+PRODUCT COMPONENT STYLES
+	- BASE
+====== */
+
+
+/* ==========================================================================
+$	BASE
+========================================================================== */
+
+.c-product {
+	padding: 3em 0;
+
+	.c-product-intro {
+		padding: 0 0 3em;
+
+		h2 {
+			@include fadeUpOut;
+			padding: 0 0 0.5rem;
+		}
+
+		p {
+			@include fadeUpOut;
+			max-width: rem(475);
+		}
+	}
+
+	.c-product-items {
+		@include fadeUpOut;
+
+		.item {
+			@include flex;
+			align-items: center;
+			break-inside: avoid;
+			flex-wrap: nowrap;
+			margin-bottom: 1.5em;
+
+			&__icon {
+				background: $blue-grad;
+				border-radius: 50%;
+				height: em(45);
+				line-height: em(45);
+				min-width: em(45);
+				text-align: center;
+				width: em(45);
+
+				span {
+					color: white;
+				}
+			}
+
+			p {
+				max-width: rem(250);
+				padding: 0 0.75rem;
+			}
+		}
+
+		@include small {
+			column-count: 2;
+		}
+	}
+
+	&.section-been {
+
+		.c-product-intro {
+			
+			h2 {
+				@include fadeUpIn;
+				transition-delay: 0.4s;
+			}
+
+			p {
+				@include fadeUpIn;
+				transition-delay: 0.6s;
+			}
+		}
+
+		.c-product-items {
+			@include fadeUpIn;
+			transition-delay: 1s;
+		}
+	}
+
+	@include small {
+		background-image: url('./dist/img/product-bg.jpg');
+		background-position: right center;
+		background-repeat: no-repeat;
+		background-size: auto 45%;
+		padding: 6em 0;
+	}
+
+	@include medium {
+		background-size: auto 85%;
+	}
+}

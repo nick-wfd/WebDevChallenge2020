@@ -1,0 +1,59 @@
+/* ====== TYPOGRAPHY STYLES ====== */
+
+/* ======
+TYPOGRAPHY STYLES
+	- STYLES
+====== */
+
+/* ==========================================================================
+$	STYLES
+========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	color: black;
+	font-family: $font-family-base;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: $font-weight-bold;
+}
+
+h2,
+h3 {
+	background: $orange-grad;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h2 {
+	font-size: em(30);
+}
+
+h3 {
+	font-size: em(22);
+}
+
+p,
+li {
+	font-size: em(14);
+	font-weight: $font-weight-light;
+	line-height: rem(22);
+}
+
+a {
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}

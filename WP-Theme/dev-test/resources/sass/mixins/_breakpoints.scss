@@ -1,0 +1,110 @@
+/* ====== RESPONSIVE MIXINS ====== */
+
+// xxsmall
+@mixin xxsmall {
+
+	@media screen and (min-width:  #{$screen-xxs-min}) {
+		@content;
+	}
+}
+@mixin xxsmall-max {
+
+	@media screen and (max-width: #{$screen-xxs-min - 1}) {
+		@content;
+	}
+}
+
+@mixin xxsmall-landscape {
+
+	@media screen and (max-width: #{$screen-xs-min}) and (orientation: landscape) {
+		@content;
+	}
+}
+
+// xsmall
+@mixin xsmall {
+
+	@media screen and (min-width: #{$screen-xs-min}) {
+		@content;
+	}
+}
+
+// small
+@mixin small {
+
+	@media screen and (min-width: #{$screen-sm-min}) {
+		@content;
+	}
+}
+@mixin small-max {
+
+	@media screen and (max-width: #{$screen-sm-min - 1}) {
+		@content;
+	}
+}
+@mixin small-landscape {
+
+	@media screen and (max-width: #{$screen-sm-min - 1}) and (orientation: landscape) {
+		@content;
+	}
+}
+
+// medium
+@mixin medium {
+
+	@media screen and (min-width: #{$screen-md-min}) {
+		@content;
+	}
+}
+@mixin medium-max {
+
+	@media screen and (max-width: #{$screen-md-min - 1}) {
+		@content;
+	}
+}
+
+// large
+@mixin large {
+
+	@media screen and (min-width: #{$screen-lg-min}) {
+		@content;
+	}
+}
+@mixin large-max {
+
+	@media screen and (max-width: #{$screen-lg-min - 1}) {
+		@content;
+	}
+}
+
+// xlarge
+@mixin xlarge {
+
+	@media screen and (min-width: #{$screen-xl-min}) {
+		@content;
+	}
+}
+
+// xxlarge
+@mixin xxlarge {
+
+	@media screen and (min-width: #{$screen-xxl-min}) {
+		@content;
+	}
+}
+
+// xxxlarge
+@mixin xxxlarge {
+
+	@media screen and (min-width: #{$screen-xxxl-min}) {
+		@content;
+	}
+}
+
+// container width
+@mixin containerWidth {
+
+	@media screen and (min-width: #{$screen-container}) {
+		@content;
+	}
+}

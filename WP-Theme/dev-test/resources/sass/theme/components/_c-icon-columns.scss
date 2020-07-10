@@ -1,0 +1,65 @@
+/* ====== ICON COLUMNS COMPONENT STYLES ====== */
+
+/* ======
+ICON COLUMNS COMPONENT STYLES
+	- BASE
+====== */
+
+
+/* ==========================================================================
+$	BASE
+========================================================================== */
+
+.c-icon-columns {
+	background-color: $grey-light;
+	padding: 3em 0;
+
+	.c-icon-col {
+		@include fadeUpOut;
+		padding: 0 0 1.5em;
+		text-align: center;
+
+		img {
+			height: em(80);
+			margin: 0 auto;
+		}
+
+		h3 {
+			padding: 0.5rem 0;
+
+			@include small {
+				padding: 1rem 0 0.5rem;
+			}
+		}
+
+		@include small {
+			padding: 0 1.5em;
+		}
+	}
+
+	.cta-wrapper {
+		@include fadeUpOut;
+		padding: 1em 0 0;
+		
+		@include small {
+			padding: 3em 0 0;
+		}
+	}
+
+	&.section-been {
+
+		.c-icon-col {
+			@include fadeUpIn;
+			transition-delay: 0.4s;
+		}
+
+		.cta-wrapper {
+			@include fadeUpIn;
+			transition-delay: 0.6s;
+		}
+	}
+
+	@include small {
+		padding: 6em 0;
+	}
+}

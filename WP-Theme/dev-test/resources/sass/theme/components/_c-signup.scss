@@ -1,0 +1,120 @@
+/* ====== SIGNUP FORM COMPONENT STYLES ====== */
+
+/* ======
+SIGNUP FORM COMPONENT STYLES
+	- BASE
+====== */
+
+
+/* ==========================================================================
+$	BASE
+========================================================================== */
+
+.c-signup {
+	@include cover;
+	background-image: url('./dist/img/bg-road.jpg');
+	padding: 3em 0;
+	position: relative;
+	text-align: center;
+
+	&:before {
+		background: $orange-grad;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.85;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 0;
+	}
+
+	.c-signup-inner {
+		position: relative;
+		z-index: 1;
+
+		h2 {
+			@include fadeUpOut;
+			background: none;
+			color: white;
+			-webkit-text-fill-color: white;
+			padding: 0 0 1.5rem;
+		}
+
+		form {
+			@include fadeUpOut;
+			position: relative;
+
+			input[type="email"] {
+				background-color: rgba(white, 0.4);
+				border-radius: rem(20);
+				border: none;
+				color: black;
+				font-size: em(14);
+				font-weight: $font-weight-normal;
+				height: rem(40);
+				outline: 0;
+				padding: 0 rem(110) 0 1.5rem;
+				transition: background-color 0.3s ease;
+				width: 100%;
+
+				&::placeholder {
+				  color: white;
+				  opacity: 1;
+				}
+
+				&:-ms-input-placeholder {
+				  color: white;
+				}
+
+				&::-ms-input-placeholder { 
+				  color: white;
+				}
+
+				&:focus {
+					background-color: rgba(white, 1);
+
+					& + button {
+						background-color: $blue-dark;
+						color: white;
+					}
+				}
+			}
+
+			button[type="submit"] {
+				background-color: white;
+				border: none;
+				height: 100%;
+				outline: 0;
+				padding: 0 1.6rem;
+				position: absolute;
+				right: 0;
+				top: 0;
+				transition: background-color 0.3s ease, color 0.3s ease;
+				z-index: 1;
+			}
+		}
+	}
+
+	&.section-been {
+
+		.c-signup-inner {
+			
+			h2 {
+				@include fadeUpIn;
+				transition-delay: 0.4s;
+			}
+
+			form {
+				@include fadeUpIn;
+				transition-delay: 0.6s;
+			}
+		}
+	}
+
+	@include small {
+		padding: 7.5em 0;
+	}
+}

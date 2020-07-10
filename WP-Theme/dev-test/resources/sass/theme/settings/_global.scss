@@ -1,0 +1,31 @@
+/* ====== GLOBAL THEME STYLES ====== */
+
+/* ======
+GLOBAL THEME STYLES
+	- CORE
+====== */
+
+
+/* ==========================================================================
+$	CORE
+========================================================================== */
+
+html,
+body {
+	background-color: white;
+	color: black;
+	font-family: $font-family-base;
+	font-weight: $font-weight-normal;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+
+body {
+	font-size: 100%;
+}
+
+.row {
+	margin: 0;
+}

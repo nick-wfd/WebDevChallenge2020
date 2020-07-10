@@ -1,0 +1,92 @@
+/* ====== TEXT IMAGE COMPONENT STYLES ====== */
+
+/* ======
+TEXT IMAGE COMPONENT STYLES
+	- BASE
+====== */
+
+
+/* ==========================================================================
+$	BASE
+========================================================================== */
+
+.c-text-image {
+
+	.c-text-image-media {
+		height: em(220);
+		overflow: hidden;
+		position: relative;
+
+		.cover {
+			@include cover;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform: scale(1.1);
+			transition: transform 0.8s cubic-bezier(.455, .03, .515, .955);
+			width: 100%;
+		}
+
+		@include small {
+			height: 100%;
+		}
+	}
+
+	.c-text-image-content {
+		background-color: $grey-light;
+		padding: 3em 1.5em;
+
+		h2,
+		p,
+		.o-btn {
+			@include fadeUpOut;
+		}
+
+		h2 {
+			padding-bottom: 1rem;
+		}
+
+		p {
+			max-width: rem(425);
+			padding-bottom: 1.5rem;
+		}
+
+		@include small {
+			padding: 9em 3em;
+		}
+
+		@include medium {
+			padding: 9em 4.5em;
+		}
+	}
+
+	&.section-been {
+
+		.c-text-image-media {
+			
+			.cover {
+				transform: scale(1);
+				transition-delay: 0.6s;
+			}
+		}
+
+		.c-text-image-content {
+			
+			h2 {
+				@include fadeUpIn;
+				transition-delay: 0.4s;
+			}
+
+			p {
+				@include fadeUpIn;
+				transition-delay: 0.6s;
+			}
+
+			.o-btn {
+				@include fadeUpIn;
+				transition-delay: 0.8s;
+			}
+		}
+	}
+}
