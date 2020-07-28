@@ -1,41 +1,57 @@
-# WebDevChallenge2020
-Technical Challenge for Web Developer Recruitment Process
+This is Jai Bararia Assignment.
 
-## Welcome
-I'm very excited to see you've come until here, this challenge is a shorter version of what should be. The deadline for this is Monday, June 8th at midnight (India Time).
+Readme file
 
-If you have any question, comment, whatever, please let me know.
+Code Reviews
 
-## Pre-Challenge Security Setup
-* Create a PGP key.
-* Using PGP, send an encrypted email, confirming the availability for Telephonic Technical Interview during the week, to nikhil@womenfirstdigital.org with your public PGP key attached.
-* You will find the public key for nikhil@womenfirstdigital.org attached in the email I sent you for this challenge.
+Mongo DB should have password
+Disable the login popup because data is stored in cache.
+There should be ajax call instead of http.post and the server site would be more secure if it has https.
+In HTTP.Post the password is shown, it should be secure.
+Login details should be append.
+ConsumerKey: Meteor.settings.public.twitter.k, secret , all these things should be kept in .env or process.env files so web parsing will stop.
+In server/main.js and server/twitter.js this syntax should be written like this Meteor.startup( function() => { }); not like this "Meteor.startup(() => { });""
+And in lib folder file counts should be replace with count
+Not a vulnerability just a suggestion we can also use css and little bit html in it to change the front end.
+Code Review Changes
 
-## Challenge 1 - Code Review
-* Review the code into the "Code-Review" folder for security vulnerabilities. This Meteor project is meant to keep track of the number of times each user clicks on the button on the client. The count per user is recorded in two places: On the Meteor server that the app is connected to. On a server located at secure.safe2choose.org (this server does not actually exist).
-Only the counts of users who have signed in with Twitter need to be securely stored. The count of users who are not logged in is irrelevant.
-* Although this code will compile, it should be treated as pseudo-code. Do not worry about inefficient or ugly code. You are only looking for vulnerabilities that would allow users to abuse the system or issues that would give hackers with access to the code the ability to compromise different parts of the system (assuming those components actually existed).
-***
-**Deliverable:** `Create a README file with explanations of the vulnerabilities you are able to find. For extra points, correct the source code to fix those issues. When finished, commit your changes and push to your own repo and create a pull request to merge your changes with the original repo (mine).`
-***
+/client/main.js/ import { Template } from 'meteor/templating'; import { ReactiveVar } from 'meteor/reactive-var';
 
-## Challenge 2 - Wordpress Plugin Development
-#### Create a Wordpress plugin with the below features: 
-* Form to capture Basic user information such as Username, email, password, etc.
-* This information collected will be posted to an API (set from the plugin admin) for user registration.
-* Based on the response (success == true or success == false), appropriate message will be shown in the plugin or redirection to a specific URL set in the Admin Panel.
-* Allow to set the value of the hidden field which is to be posted along with the User Data to the API. 
-* Allow to set custom redirection URLs for specific pages on which the plugin is being used.
-***
-**Deliverable:** `Update the plugin code in "WP-Plugin" folder. Create a pull request to merge your changes.` 
-***
+import './main.html';
 
-## Challenge 3 - Wordpress Theme Development
-* The "WP-Theme" Folder has 2 PSD files. (select any one to create a wordpress theme based on the psd) 
-* You need to create a responsive wordpress theme based on the PSD.
-* You must use SASS or LESS, choose!
-* Bootstrap is mandatory
-* You can use pure JS or Jquery or any other you prefer
-***
-**Deliverable:**  `Upload the theme in "WP-Theme" folder. Create a pull request to merge your changes.`
-***
+Template.hello.onCreated(function helloOnCreated() { // counter starts at 0 this.counter = new ReactiveVar(0); });
+
+Template.hello.helpers({ counter() { return Template.instance().counter.get(); }, });
+
+Template.hello.events({ 'click button'(event, instance) { const count = instance.counter.get() + 1 // increment the counter when button is clicked instance.counter.set(count);
+
+// Send count to Meteor server
+Meteor.call("counts.set", Meteor.userId(), count, (error, result) => {
+  if(error) {
+    console.log("error", error);
+  }
+  if(result) {
+    console.log('sent count to Meteor server');
+  }
+});
+
+// // Send count to external server
+HTTP.post("http://secure.safe2choose.org?password=ldkjsadfasddfaa", { userId: Meteor.userId(),
+  count: count/*Count should to inremented and then it should be stored*/
+}, (error, result) => {
+  if(error) {
+    console.log("error", error);
+  }
+  if(result){
+    console.log('sent count to secure.safe2choose.org');
+    /*The password is going to user machine*/
+  }
+});
+}, });
+
+/counts-collection.js/ Count = new Mongo.Collection("count");
+
+WP-Plugin/plugin.php
+
+Form Field'; $form_data .= ''; $form_data .='Name'; $form_data .=''; $form_data .='Email'; $form_data .=''; $form_data .='Phone'; $form_data .=''; $form_data .='Message'; $form_data .='<textarea name="your_comments" class="form-control" placeholder="enter your question"></textarea>'; $form_data .= '
+'; $form_data .= ''; return $form_data; } add_shortcode('FormPlugin','formPlugin'); function form_input() { if(isset($POST['form_submit'])) { $name = sanitize_text_field($_POST['your_name']); $email = sanitize_text_field($_POST['your_email']); $phone = sanitize_text_field($_POST['your_phone']); $comments = sanitize_textarea_field($_POST['your_comments']); $to = 'abc@gmail.com'; $subject = 'subject'; $message = ''.$name.' '.$email.' '.$phone.' '.$comments; wp_mail($to,$subject,$message); } } add_action('wp_head','form_input'); ?>
